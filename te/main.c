@@ -19,24 +19,23 @@ void create(struct BinTree * *BT)
         create(&((*BT)->Right));
     }
 }
-void print(struct BinTree * BT,int h)
+void Print(struct BinTree * BT,int h)
 {
     if(BT)
     {
-        print(BT->Right,h+1);
+        Print(BT->Right,h+1);
         for(int i=0;i<h;i++)
         {
             printf("  ");
         }
         printf("%d\n",BT->data);
-        print(BT->Left,h+1);
+        Print(BT->Left,h+1);
     }
 }
 int main()
 {
     struct BinTree b,*BT;
-    BT=&b;
     create(&BT);
-    print(BT,1);
+    Print(BT,1);
     return 0;
 }
